@@ -6,44 +6,16 @@
       <span>Mi esposa</span>
     </div>
       <ChatMessages :messages="messages" />
-      <Messabox/>
+      <Messabox @-sed-mesaje="onMenssage" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
-
 import ChatMessages from '@/components/chat/ChatMessage.vue';
 import Messabox from '@/components/chat/MessaBox.vue';
+import { useChat } from '@/composables/useChat';
 
-import { ChatMessage } from '../interfaces/chatmessageinterface.ts';
+const {messages,onMenssage}= useChat( );
 
-// Example usage: Creating an array of chat messages
 
-const messages = ref<ChatMessage[]>([
-    {
-        id: 1,
-        message: "hola guapa que haces ",
-        isMine: true,
-        image: "https://yesno.wtf/assets/no/23-5fe6c1ca6c78e7bf9a7cf43e406fb8db.gif"
-    },
-    {
-        id: 2,
-        message: "nada aqui en mi cama ",
-        isMine: false,
-        image: "https://yesno.wtf/assets/no/23-5fe6c1ca6c78e7bf9a7cf43e406fb8db.gif"
-    },
-    {
-        id: 3,
-        message: "sales hoy para ir a tomar ",
-        isMine: true,
-        image: "https://yesno.wtf/assets/no/23-5fe6c1ca6c78e7bf9a7cf43e406fb8db.gif"
-    },
-    {
-        id: 4,
-        message: "sonse tu quieras voy ",
-        isMine: false,
-    },
-
-]);
 </script>

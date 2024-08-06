@@ -1,6 +1,6 @@
 <template>
   <!-- Example Sent Message -->
-  <div v-if="ismine" class="flex justify-end">
+  <div v-if="isMine" class="flex justify-end">
     <div class="bg-blue-200 text-black p-2 rounded-lg max-w-xs">
       <span class="capitalize"> {{ message }}</span>
       <img v-if="image" :src="image" alt="Message Image" class="w-16 h-16 object-cover rounded-full" />
@@ -24,10 +24,12 @@
 
 <script lang="ts" setup>
 interface Props {
-  ismine: boolean;
+  id: number;
   message: string;
+  isMine: boolean;
   image?: string;
 }
+
 
 defineProps<Props>();
 </script>

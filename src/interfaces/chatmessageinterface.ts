@@ -1,6 +1,7 @@
+// chatmessageinterface.ts
 export interface ChatMessage {
-    id: number;
-    message: string;
-    itsMine: boolean;
-    image?: string;
-  }
+  id: number;
+  message: string;
+  isMine: boolean;
+  image?: string;
+}
